@@ -6,7 +6,7 @@
     <title>Password Entry</title>
     <style>
         body {
-            font-family: 'Comic Sans Ms', sans-serif;
+            font-family: 'Comic Sans MS', sans-serif;
             text-align: center;
             margin-top: 50px;
         }
@@ -28,36 +28,38 @@
 </head>
 <body>
     <h1>enter the super duper secret password</h1>
-	<p>its not 123456 so dont even try it</p>
+    <p>its not 123456, so dont even try it.</p>
     <form id="passwordForm">
         <input type="password" id="passwordInput" placeholder="Enter password" required>
-        <button type="submit">submit</button>
+        <button type="submit">Submit</button>
     </form>
 
     <p id="message"></p>
 
     <script>
-        // Password to be guessed
-        const correctPassword = 'SECRET123';
+        const correctPassword = '1849'; 
 
-        // Form submission event listener
         document.getElementById('passwordForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevents the form from reloading the page
+            event.preventDefault();
             const enteredPassword = document.getElementById('passwordInput').value;
 
-            // Check if the entered password matches the correct one
             if (enteredPassword === correctPassword) {
-                document.getElementById('message').innerText = "Congratulations, you entered the correct password!";
+                document.getElementById('message').innerText = "https://github.com/Hanghang0307/NotTheRealDarkWeb";
                 document.getElementById('message').style.color = "green";
-
             } 
-			if (enteredPassword === '123456') {
-				document.getElementById('message').innerText = "dummy";
+
+            else if (enteredPassword === '123456') {
+                document.getElementById('message').innerText = "dummy";
                 document.getElementById('message').style.color = "red";
-			}
-			
-			else {
-                document.getElementById('message').innerText = "are you guessing or just really bad at typing? ";
+            } 
+
+            else if (enteredPassword === 'not 123456' || enteredPassword === 'not 123456, so dont even try it.') {
+                document.getElementById('message').innerText = "youre just so smart, arent you?";
+                document.getElementById('message').style.color = "red";
+            } 
+
+            else {
+                document.getElementById('message').innerText = "are you guessing or just really bad at typing?";
                 document.getElementById('message').style.color = "red";
             }
         });
@@ -65,3 +67,4 @@
 
 </body>
 </html>
+
